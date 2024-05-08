@@ -1,0 +1,101 @@
+[
+    {
+    "id": 1,
+    "name": "Todikku ras ghaddo",
+    "city": "Gramado",
+    "status": "active",
+    "approved": true,
+    "genre": "male",
+    "genreDescription": "Masculino",
+    "salary": 50000.5,
+    "age": 34
+  },
+  {
+    "id": 2,
+    "name": "Culam Bidin",
+    "city": "Rio de Janeiro",
+    "status": "inactive",
+    "approved": false,
+    "genre": "female",
+    "genreDescription": "Feminino",
+    "salary": 62000,
+    "age": 30
+  },
+  {
+    "id": 3,
+    "name": "Sokommo Khudemasho",
+    "city": "Belo Horizonte",
+    "status": "active",
+    "approved": true,
+    "genre": "other",
+    "genreDescription": "Outros",
+    "salary": 45000.75,
+    "age": 78
+  },
+  {
+    "id": 4,
+    "name": "Kukiyah' Phyta",
+    "city": "Uberlandia",
+    "status": "active",
+    "approved": false,
+    "genre": "other",
+    "genreDescription": "Outros",
+    "salary": 45000.75,
+    "age": 18
+  },
+  {
+    "id": 5,
+    "name": "Milamby Orregho",
+    "city": "Osasco",
+    "status": "active",
+    "approved": true,
+    "genre": "male",
+    "genreDescription": "Outros",
+    "salary": 45000.75,
+    "age": 19
+  },
+  {
+    "id": 6,
+    "name": "Okku Nennpiska",
+    "city": "Curitiba",
+    "status": "active",
+    "approved": false,
+    "genre": "other",
+    "genreDescription": "Outros",
+    "salary": 45000.75,
+    "age": 21
+  },
+  {
+    "id": 7,
+    "name": "Milamby Orregho",
+    "city": "Barueri",
+    "status": "active",
+    "approved": true,
+    "genre": "other",
+    "genreDescription": "Outros",
+    "salary": 45000.75,
+    "age": 39
+  },
+  {
+    "id": 8,
+    "name": "Tye Melo Asbolas",
+    "city": "São Paulo",
+    "status": "active",
+    "approved": false,
+    "genre": "other",
+    "genreDescription": "Outros",
+    "salary": 45000.75,
+    "age": 40
+  },
+  {
+    "id": 9,
+    "name": "Jálam Biphals",
+    "city": "Joinvile",
+    "status": "active",
+    "approved": true,
+    "genre": "other",
+    "genreDescription": "Outros",
+    "salary": 45000.75,
+    "age": 55
+  }
+]
