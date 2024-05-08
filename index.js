@@ -1,14 +1,17 @@
 const express = require("express");
+const cors = require("cors"); // Importa o pacote CORS
 const app = express();
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 
-const peoples = require("./src/peoples/peoples.json")
+// Aplica o CORS para permitir acesso de diferentes origens
+app.use(cors());
 
-app.get("/peoples", (req,res) => {
-    return res.json(peoples)
-})
+const peoples = require("./src/peoples/peoples.json");
 
+app.get("/peoples", (req, res) => {
+    return res.json(peoples);
+});
 
 app.listen(port, () => {
-    console.log("servidor rodando de boas!")
-})
+    console.log("servidor rodando de boas!");
+});
