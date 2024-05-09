@@ -2,7 +2,7 @@
     {
     "id": 1,
     "name": "Todikku ras ghaddo",
-    "city": "Gramado",
+    "city": "Winterfell",
     "status": "active",
     "approved": true,
     "genre": "male",
@@ -13,7 +13,7 @@
   {
     "id": 2,
     "name": "Culam Bidin",
-    "city": "Rio de Janeiro",
+    "city": "Oldtown",
     "status": "inactive",
     "approved": false,
     "genre": "female",
@@ -24,7 +24,7 @@
   {
     "id": 3,
     "name": "Sokommo Khudemasho",
-    "city": "Belo Horizonte",
+    "city": "Lannisport",
     "status": "active",
     "approved": true,
     "genre": "other",
@@ -35,7 +35,7 @@
   {
     "id": 4,
     "name": "Kukiyah' Phyta",
-    "city": "Uberlandia",
+    "city": "Pentos",
     "status": "active",
     "approved": false,
     "genre": "other",
@@ -46,7 +46,7 @@
   {
     "id": 5,
     "name": "Milamby Orregho",
-    "city": "Osasco",
+    "city": "Meereen",
     "status": "active",
     "approved": true,
     "genre": "male",
@@ -57,7 +57,7 @@
   {
     "id": 6,
     "name": "Okku Nennpiska",
-    "city": "Curitiba",
+    "city": "Qarth",
     "status": "active",
     "approved": false,
     "genre": "other",
@@ -68,7 +68,7 @@
   {
     "id": 7,
     "name": "Milamby Orregho",
-    "city": "Barueri",
+    "city": "Astapor",
     "status": "active",
     "approved": true,
     "genre": "other",
