@@ -9,7 +9,8 @@
       "genreDescription": "Masculino",
       "salary": 5005,
       "age": 34,
-      "email": "todikku.ras@winterfell.com"
+      "email": "todikku.ras@winterfell.com",
+      "birthdate": "1988-06-15"
   },
   {
       "id": 145304513,
@@ -21,7 +22,8 @@
       "genreDescription": "Feminino",
       "salary": 6200,
       "age": 30,
-      "email": "culam.bidin@oldtown.com"
+      "email": "culam.bidin@oldtown.com",
+      "birthdate": "1993-09-22"
   },
   {
       "id": 71398991588,
@@ -33,7 +35,8 @@
       "genreDescription": "Outros",
       "salary": 4537,
       "age": 78,
-      "email": "sokommo.khudemasho@lannisport.com"
+      "email": "sokommo.khudemasho@lannisport.com",
+      "birthdate": "1945-12-01"
   },
   {
       "id": 176706779699,
@@ -45,7 +48,8 @@
       "genreDescription": "Outros",
       "salary": 8769,
       "age": 18,
-      "email": "kukiyah.phyta@pentos.com"
+      "email": "kukiyah.phyta@pentos.com",
+      "birthdate": "2005-03-18"
   },
   {
       "id": 1843831655324,
@@ -57,7 +61,8 @@
       "genreDescription": "Outros",
       "salary": 4500,
       "age": 19,
-      "email": "milamby.orregho@meereen.com"
+      "email": "milamby.orregho@meereen.com",
+      "birthdate": "2004-10-10"
   },
   {
       "id": 17728635840089,
@@ -69,7 +74,8 @@
       "genreDescription": "Outros",
       "salary": 4335,
       "age": 21,
-      "email": "okku.nennpiska@qarth.com"
+      "email": "okku.nennpiska@qarth.com",
+      "birthdate": "2002-11-25"
   },
   {
       "id": 11305957716485,
@@ -81,7 +87,8 @@
       "genreDescription": "Outros",
       "salary": 5000,
       "age": 39,
-      "email": "milamby.orregho@astapor.com"
+      "email": "milamby.orregho@astapor.com",
+      "birthdate": "1984-07-04"
   },
   {
       "id": 1987120529287,
@@ -93,7 +100,8 @@
       "genreDescription": "Outros",
       "salary": 1400,
       "age": 40,
-      "email": "tye.melo@sãopaulo.com"
+      "email": "tye.melo@sãopaulo.com",
+      "birthdate": "1983-01-16"
   },
   {
       "id": 7333465338,
@@ -105,6 +113,7 @@
       "genreDescription": "Outros",
       "salary": 7346,
       "age": 55,
-      "email": "jalam.biphals@joinvile.com"
+      "email": "jalam.biphals@joinvile.com",
+      "birthdate": "1968-05-09"
   }
 ]
