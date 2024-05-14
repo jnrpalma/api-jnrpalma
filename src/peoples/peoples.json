@@ -10,7 +10,8 @@
       "salary": 5005,
       "age": 34,
       "email": "todikku.ras@winterfell.com",
-      "birthdate": "1988-06-15"
+      "birthdate": "1988-06-15",
+      "img": "https://images.dog.ceo/breeds/basenji/n02110806_4400.jpg"
   },
   {
       "id": 145304513,
@@ -23,7 +24,8 @@
       "salary": 6200,
       "age": 30,
       "email": "culam.bidin@oldtown.com",
-      "birthdate": "1993-09-22"
+      "birthdate": "1993-09-22",
+      "img": "https://images.dog.ceo/breeds/terrier-patterdale/dog-1268559_640.jpg"
   },
   {
       "id": 71398991588,
@@ -36,7 +38,8 @@
       "salary": 4537,
       "age": 78,
       "email": "sokommo.khudemasho@lannisport.com",
-      "birthdate": "1945-12-01"
+      "birthdate": "1945-12-01",
+      "img": "https://images.dog.ceo/breeds/mountain-swiss/n02107574_678.jpg"
   },
   {
       "id": 176706779699,
@@ -49,7 +52,8 @@
       "salary": 8769,
       "age": 18,
       "email": "kukiyah.phyta@pentos.com",
-      "birthdate": "2005-03-18"
+      "birthdate": "2005-03-18",
+      "img": "https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_448.jpg"
   },
   {
       "id": 1843831655324,
@@ -62,7 +66,8 @@
       "salary": 4500,
       "age": 19,
       "email": "milamby.orregho@meereen.com",
-      "birthdate": "2004-10-10"
+      "birthdate": "2004-10-10",
+      "img": "https://images.dog.ceo/breeds/mountain-bernese/n02107683_2683.jpg"
   },
   {
       "id": 17728635840089,
@@ -75,7 +80,8 @@
       "salary": 4335,
       "age": 21,
       "email": "okku.nennpiska@qarth.com",
-      "birthdate": "2002-11-25"
+      "birthdate": "2002-11-25",
+      "img": "https://images.dog.ceo/breeds/dachshund/dachshund-3.jpg"
   },
   {
       "id": 11305957716485,
@@ -88,7 +94,8 @@
       "salary": 5000,
       "age": 39,
       "email": "milamby.orregho@astapor.com",
-      "birthdate": "1984-07-04"
+      "birthdate": "1984-07-04",
+      "img": "https://images.dog.ceo/breeds/mexicanhairless/n02113978_471.jpg"
   },
   {
       "id": 1987120529287,
@@ -101,7 +108,8 @@
       "salary": 1400,
       "age": 40,
       "email": "tye.melo@sãopaulo.com",
-      "birthdate": "1983-01-16"
+      "birthdate": "1983-01-16",
+      "img": "https://images.dog.ceo/breeds/akita/Akita_Dog.jpg"
   },
   {
       "id": 7333465338,
@@ -114,7 +122,8 @@
       "salary": 7346,
       "age": 55,
       "email": "jalam.biphals@joinvile.com",
-      "birthdate": "1968-05-09"
+      "birthdate": "1968-05-09",
+      "img": "https://images.dog.ceo/breeds/saluki/n02091831_7665.jpg"
   },
   {
       "id": 7365338,
@@ -127,7 +136,8 @@
       "salary": 54689,
       "age": 51,
       "email": "chisppim.tuddoh@pallet.com",
-      "birthdate": "1970-11-14"
+      "birthdate": "1970-11-14",
+      "img": "https://images.dog.ceo/breeds/affenpinscher/n02110627_8033.jpg"
   },
   {
       "id": 222115338,
@@ -140,7 +150,8 @@
       "salary": 1234589,
       "age": 18,
       "email": "power.guido@cerulean.com",
-      "birthdate": "1996-12-23"
+      "birthdate": "1996-12-23",
+      "img": "https://images.dog.ceo/breeds/komondor/n02105505_3738.jpg"
   },
   {
     "id": 123456,
@@ -153,7 +164,8 @@
     "salary": 1000,
     "age": 44,
     "email": "sokommo.kudikenga@cinnabar.com",
-    "birthdate": "1992-01-10"
+    "birthdate": "1992-01-10",
+    "img": "https://images.dog.ceo/breeds/hound-basset/n02088238_11542.jpg"
 },
 {
     "id": 789101,
@@ -166,7 +178,8 @@
     "salary": 1500,
     "age": 28,
     "email": "nabumm.dynha@emeraldheights.com",
-    "birthdate": "1996-05-12"
+    "birthdate": "1996-05-12",
+    "img": "https://images.dog.ceo/breeds/pyrenees/n02111500_4731.jpg"
   },
   {
     "id": 789102,
@@ -179,7 +192,8 @@
     "salary": 1800,
     "age": 32,
     "email": "myatora.tamursha@crystalbay.com",
-    "birthdate": "1991-08-08"
+    "birthdate": "1991-08-08",
+    "img": "https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_3810.jpg"
   },
   {
     "id": 789103,
@@ -192,7 +206,8 @@
     "salary": 2000,
     "age": 35,
     "email": "cuca.beludo@silverridge.com",
-    "birthdate": "1989-03-15"
+    "birthdate": "1989-03-15",
+    "img": "https://images.dog.ceo/breeds/collie-border/n02106166_402.jpg"
   },
   {
     "id": 789104,
@@ -205,6 +220,77 @@
     "salary": 1700,
     "age": 30,
     "email": "deidhy.kualberto@sunsetvalley.com",
-    "birthdate": "1994-04-22"
+    "birthdate": "1994-04-22",
+    "img": "https://images.dog.ceo/breeds/dhole/n02115913_250.jpg"
+  },
+  {
+    "id": 1234576,
+    "name": "Leethórõ",
+    "city": "Valley Fenix",
+    "status": "active",
+    "approved": false,
+    "genre": "other",
+    "genreDescription": "Outros",
+    "salary": 1320,
+    "age": 35,
+    "email": "lethoro.dhemas@valleyfenix.com",
+    "birthdate": "2001-05-19",
+    "img": "https://images.dog.ceo/breeds/puggle/IMG_081858.jpg"
+  },
+  {
+    "id": 1000,
+    "name": "Leefúhrõ",
+    "city": "Adamantill City",
+    "status": "active",
+    "approved": true,
+    "genre": "male",
+    "genreDescription": "Masculino",
+    "salary": 1499,
+    "age": 74,
+    "email": "leefuhro.dhemas@adamantill.com",
+    "birthdate": "2004-01-01",
+    "img": "https://images.dog.ceo/breeds/spaniel-welsh/n02102177_2010.jpg"
+  },
+  {
+    "id": 2645,
+    "name": "Caim Dibboka Najheba'Dhurãn",
+    "city": "Ebiurep Castle",
+    "status": "inactive",
+    "approved": true,
+    "genre": "female",
+    "genreDescription": "Feminino",
+    "salary": 1990,
+    "age": 24,
+    "email": "caim.dibboka@najheba.com",
+    "birthdate": "1945-06-10",
+    "img": "https://images.dog.ceo/breeds/hound-ibizan/n02091244_100.jpg"
+  },
+  {
+    "id": 6415,
+    "name": "Allar Garam Miottoba",
+    "city": "Mehnati Tower",
+    "status": "inactive",
+    "approved": true,
+    "genre": "other",
+    "genreDescription": "Outros",
+    "salary": 13034,
+    "age": 27,
+    "email": "allar.garam@miottoba.com",
+    "birthdate": "1934-09-01",
+    "img": "https://images.dog.ceo/breeds/pomeranian/n02112018_3532.jpg"
+  },
+  {
+    "id": 6460,
+    "name": "Todeku Ar'Diddo",
+    "city": "Towhashi Nagashi",
+    "status": "active",
+    "approved": false,
+    "genre": "other",
+    "genreDescription": "Outros",
+    "salary": 1034,
+    "age": 28,
+    "email": "todeku.jhamal@mio.com",
+    "birthdate": "1948-11-11",
+    "img": "https://images.dog.ceo/breeds/tervuren/yoda_on_terrace.jpg"
   }
 ]
