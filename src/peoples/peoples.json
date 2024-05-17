@@ -292,5 +292,61 @@
     "email": "todeku.jhamal@mio.com",
     "birthdate": "1948-11-11",
     "img": "https://images.dog.ceo/breeds/tervuren/yoda_on_terrace.jpg"
+  },
+  {
+    "id": 496979,
+    "name": "Millas Kharo",
+    "city": "Carakhas City",
+    "status": "active",
+    "approved": true,
+    "genre": "male",
+    "genreDescription": "Masculino",
+    "salary": 1134,
+    "age": 29,
+    "email": "millas.kharo@teste.com",
+    "birthdate": "1950-02-19",
+    "img": "https://images.dog.ceo/breeds/finnish-lapphund/mochilamvan.jpg"
+  },
+  {
+    "id": 1079,
+    "name": "Jalinn Fio Atóra",
+    "city": "Diadhemah Island",
+    "status": "active",
+    "approved": false,
+    "genre": "female",
+    "genreDescription": "Feminino",
+    "salary": 1034,
+    "age": 31,
+    "email": "jalinn.fio@atora.com",
+    "birthdate": "1951-03-21",
+    "img": "https://images.dog.ceo/breeds/eskimo/n02109961_6221.jpg"
+  },
+  {
+    "id": 1100,
+    "name": "Toco Butico Ardido",
+    "city": "Londres",
+    "status": "inactive",
+    "approved": true,
+    "genre": "female",
+    "genreDescription": "Feminino",
+    "salary": 14,
+    "age": 33,
+    "email": "toco.butico@ardido.com",
+    "birthdate": "1955-06-22",
+    "img": "https://images.dog.ceo/breeds/segugio-italian/n02090722_001.jpg"
+  },
+  {
+    "id": 1009,
+    "name": "D'jeba Molengha",
+    "city": "Serdnol",
+    "status": "inactive",
+    "approved": true,
+    "genre": "other",
+    "genreDescription": "Outros",
+    "salary": 14856,
+    "age": 35,
+    "email": "jeba.molengha@ardido.com",
+    "birthdate": "1955-06-22",
+    "img": "https://images.dog.ceo/breeds/dane-great/n02109047_1480.jpg"
   }
 ]
