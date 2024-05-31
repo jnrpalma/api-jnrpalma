@@ -10,8 +10,8 @@ const peoples = require("./src/peoples/peoples.json");
 
 
 app.delete("/peoples/:id", (req, res) => {
-  const id = req.params.id;
-  const index = peoples.findIndex(item => item.id === parseInt(id));
+  const id = decodeURIComponent(req.params.id);
+  const index = peoples.findIndex(item => `${item.id}|${item.city}` === id);
 
   if (index > -1) {
     peoples.splice(index, 1);
@@ -26,7 +26,6 @@ app.delete("/peoples/:id", (req, res) => {
     });
   }
 });
-
 
 // Função para filtrar e ordenar os dados
 function filterAndSort(data, query) {
