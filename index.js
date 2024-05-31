@@ -8,6 +8,26 @@ app.use(express.json());
 
 const peoples = require("./src/peoples/peoples.json");
 
+
+app.delete("/peoples/:id", (req, res) => {
+  const id = req.params.id;
+  const index = peoples.findIndex(item => item.id === parseInt(id));
+
+  if (index > -1) {
+    peoples.splice(index, 1);
+    res.json({
+      code: "SUCCESS",
+      message: "Item excluído com sucesso."
+    });
+  } else {
+    res.status(404).json({
+      code: "NOT_FOUND",
+      message: "Item não encontrado."
+    });
+  }
+});
+
+
 // Função para filtrar e ordenar os dados
 function filterAndSort(data, query) {
   // Filtro
