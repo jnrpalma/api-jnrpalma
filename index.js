@@ -12,11 +12,6 @@ app.delete("/peoples/:id", (req, res) => {
   const id = decodeURIComponent(req.params.id);
   console.log("ID recebido para exclusão:", id); // Log do ID recebido
 
-  // Verifica se a chave composta está correta
-  peoples.forEach((item) => {
-    console.log(`Verificando item: ${item.id}|${item.status}`);
-  });
-
   const index = peoples.findIndex((item) => {
     const composedKey = `${item.id}|${item.status}`;
     console.log(`Comparando ${composedKey} com ${id}`);
