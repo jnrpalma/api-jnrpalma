@@ -8,55 +8,48 @@ app.use(express.json());
 
 let peoples = require("./src/peoples/peoples.json");
 
-// Função para compor a chave a partir dos parâmetros
-function composeKey(item, keys) {
-  return keys.map(key => item[key]).join('|');
-}
-
-app.delete("/peoples/:keys", (req, res) => {
-  const keysString = decodeURIComponent(req.params.keys);
-  const keys = keysString.split('|');
-  const keyProperties = keys.map((_, index) => `key${index}`); // Gerar propriedades de chave dinamicamente
-
-  console.log("Chaves recebidas para exclusão:", keys);
+app.delete("/peoples/:id", (req, res) => {
+  const id = decodeURIComponent(req.params.id);
+  console.log("ID recebido para exclusão:", id); // Log do ID recebido
 
   const index = peoples.findIndex((item) => {
-    const composedKey = composeKey(item, keyProperties);
-    console.log(`Comparando ${composedKey} com ${keysString}`);
-    return composedKey === keysString;
+    const composedKey = `${item.id}|${item.status}`;
+    console.log(`Comparando ${composedKey} com ${id}`);
+    return composedKey === id;
   });
 
-  console.log("Índice encontrado:", index);
+  console.log("Índice encontrado:", index); // Log do índice encontrado
 
   if (index > -1) {
     const deletedItem = peoples.splice(index, 1);
     res.json({
       code: "SUCCESS",
       message: "Item excluído com sucesso.",
-      deletedItem: deletedItem[0],
+      deletedItem: deletedItem[0], // Inclui o item excluído na resposta para verificação
       _messages: [{
         code: "INFO",
         type: "information",
         message: "Item excluído com sucesso.",
-        detailedMessage: `O item com ID ${keysString} foi excluído.`,
+        detailedMessage: `O item com ID ${id} foi excluído.`,
       }],
     });
   } else {
     res.status(404).json({
       code: "NOT_FOUND",
       message: "Item não encontrado.",
-      detailedMessage: `O item com ID ${keysString} não foi encontrado.`,
+      detailedMessage: `O item com ID ${id} não foi encontrado.`,
       _messages: [{
         code: "ERROR",
         type: "error",
         message: "Item não encontrado.",
-        detailedMessage: `O item com ID ${keysString} não foi encontrado.`,
+        detailedMessage: `O item com ID ${id} não foi encontrado.`,
       }],
     });
   }
 });
 
-// Funções para filtrar, ordenar e paginar os dados (mantidas conforme necessário)
+
+// Função para filtrar e ordenar os dados
 function filterAndSort(data, query) {
   let result = data.filter((item) => {
     for (let key in query) {
@@ -92,6 +85,7 @@ function filterAndSort(data, query) {
   return result;
 }
 
+// Função para implementar a paginação
 function paginate(data, page, pageSize) {
   const start = (page - 1) * pageSize;
   const end = start + pageSize;
