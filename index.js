@@ -12,7 +12,6 @@ app.delete("/peoples/:id", (req, res) => {
   const id = decodeURIComponent(req.params.id);
   console.log("ID recebido para exclusão:", id); // Log do ID recebido
 
-  // Confirmação de que a chave composta está correta
   peoples.forEach((item) => {
     console.log(`Verificando item: ${item.id}|${item.status}`);
   });
@@ -25,13 +24,25 @@ app.delete("/peoples/:id", (req, res) => {
     res.json({
       code: "SUCCESS",
       message: "Item excluído com sucesso.",
-      deletedItem: deletedItem[0] // Inclui o item excluído na resposta para verificação
+      deletedItem: deletedItem[0], // Inclui o item excluído na resposta para verificação
+      _messages: [{
+        code: "INFO",
+        type: "information",
+        message: "Item excluído com sucesso.",
+        detailedMessage: `O item com ID ${id} foi excluído.`,
+      }],
     });
   } else {
     res.status(404).json({
       code: "NOT_FOUND",
       message: "Item não encontrado.",
       detailedMessage: `O item com ID ${id} não foi encontrado.`,
+      _messages: [{
+        code: "ERROR",
+        type: "error",
+        message: "Item não encontrado.",
+        detailedMessage: `O item com ID ${id} não foi encontrado.`,
+      }],
     });
   }
 });
