@@ -16,10 +16,11 @@ app.delete("/peoples/:id", (req, res) => {
   console.log("Índice encontrado:", index); // Log do índice encontrado
 
   if (index > -1) {
-    peoples.splice(index, 1);
+    const deletedItem = peoples.splice(index, 1);
     res.json({
       code: "SUCCESS",
       message: "Item excluído com sucesso.",
+      deletedItem: deletedItem[0] // Inclui o item excluído na resposta para verificação
     });
   } else {
     res.status(404).json({
