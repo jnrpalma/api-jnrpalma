@@ -12,6 +12,11 @@ app.delete("/peoples/:id", (req, res) => {
   const id = decodeURIComponent(req.params.id);
   console.log("ID recebido para exclusão:", id); // Log do ID recebido
 
+  // Confirmação de que a chave composta está correta
+  peoples.forEach((item) => {
+    console.log(`Verificando item: ${item.id}|${item.status}`);
+  });
+
   const index = peoples.findIndex((item) => `${item.id}|${item.status}` === id);
   console.log("Índice encontrado:", index); // Log do índice encontrado
 
@@ -33,7 +38,6 @@ app.delete("/peoples/:id", (req, res) => {
 
 // Função para filtrar e ordenar os dados
 function filterAndSort(data, query) {
-  // Filtro
   let result = data.filter((item) => {
     for (let key in query) {
       if (
@@ -52,7 +56,6 @@ function filterAndSort(data, query) {
     return true;
   });
 
-  // Ordenação
   if (query.order) {
     const orders = query.order.split(",");
     result = result.sort((a, b) => {
