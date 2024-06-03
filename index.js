@@ -13,7 +13,7 @@ app.delete("/peoples/:id", (req, res) => {
   console.log("ID recebido para exclusão:", id); // Log do ID recebido
 
   const index = peoples.findIndex((item) => {
-    const composedKey = `${item.id}|${item.status}`;
+    const composedKey = `${item.name}|${item.status}`;
     console.log(`Comparando ${composedKey} com ${id}`);
     return composedKey === id;
   });
