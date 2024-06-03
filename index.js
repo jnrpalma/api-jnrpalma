@@ -48,6 +48,7 @@ app.delete("/peoples/:id", (req, res) => {
   }
 });
 
+
 // Função para filtrar e ordenar os dados
 function filterAndSort(data, query) {
   let result = data.filter((item) => {
