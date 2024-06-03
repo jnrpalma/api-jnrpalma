@@ -63,8 +63,6 @@ function filterAndSort(data, query) {
     for (let key in query) {
       if (
         key !== "order" &&
-        key !== "page" &&
-        key !== "pageSize" &&
         (!item[key] ||
           !item[key]
             .toString()
@@ -93,32 +91,19 @@ function filterAndSort(data, query) {
   return result;
 }
 
-// Função para implementar a paginação
-function paginate(data, page, pageSize) {
-  const start = (page - 1) * pageSize;
-  const end = start + pageSize;
-  return data.slice(start, end);
-}
-
 app.get("/peoples", (req, res) => {
   try {
-    let { page, pageSize } = req.query;
-    page = page ? parseInt(page) : 1;
-    pageSize = pageSize ? parseInt(pageSize) : 10;
-
     let filteredAndSorted = filterAndSort(peoples, req.query);
-    const paginated = paginate(filteredAndSorted, page, pageSize);
 
     res.json({
-      hasNext: filteredAndSorted.length > page * pageSize,
-      items: paginated,
+      items: filteredAndSorted,
       _messages: [
         {
           code: "INFO",
           type: "information",
           message: "Dados recuperados com sucesso.",
           detailedMessage:
-            "A lista de pessoas foi filtrada, ordenada e paginada conforme solicitado.",
+            "A lista de pessoas foi filtrada e ordenada conforme solicitado.",
         },
       ],
     });
