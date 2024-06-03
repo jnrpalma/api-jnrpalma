@@ -12,11 +12,20 @@ app.delete("/peoples/:id", (req, res) => {
   const id = decodeURIComponent(req.params.id);
   console.log("ID recebido para exclusão:", id); // Log do ID recebido
 
-  const index = peoples.findIndex((item) => {
+  // Tentar encontrar pelo composto de 'name' e 'status'
+  let index = peoples.findIndex((item) => {
     const composedKey = `${item.name}|${item.status}`;
     console.log(`Comparando ${composedKey} com ${id}`);
     return composedKey === id;
   });
+
+  // Se não encontrar pelo composto, tentar encontrar pelo 'id'
+  if (index === -1) {
+    index = peoples.findIndex((item) => {
+      console.log(`Comparando ${item.id} com ${id}`);
+      return item.id.toString() === id;
+    });
+  }
 
   console.log("Índice encontrado:", index); // Log do índice encontrado
 
@@ -25,7 +34,7 @@ app.delete("/peoples/:id", (req, res) => {
     res.json({
       code: "SUCCESS",
       message: "Item excluído com sucesso.",
-      deletedItem: deletedItem[0], 
+      deletedItem: deletedItem[0],
       _messages: [{
         code: "INFO",
         type: "information",
@@ -47,7 +56,6 @@ app.delete("/peoples/:id", (req, res) => {
     });
   }
 });
-
 
 // Função para filtrar e ordenar os dados
 function filterAndSort(data, query) {
