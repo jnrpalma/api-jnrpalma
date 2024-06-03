@@ -6,11 +6,14 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-const peoples = require("./src/peoples/peoples.json");
+let peoples = require("./src/peoples/peoples.json");
 
 app.delete("/peoples/:id", (req, res) => {
   const id = decodeURIComponent(req.params.id);
-  const index = peoples.findIndex((item) => `${item.id}|${item.city}` === id);
+  console.log("ID recebido para exclusão:", id); // Log do ID recebido
+
+  const index = peoples.findIndex((item) => `${item.id}|${item.status}` === id);
+  console.log("Índice encontrado:", index); // Log do índice encontrado
 
   if (index > -1) {
     peoples.splice(index, 1);
