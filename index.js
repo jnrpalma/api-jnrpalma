@@ -14,7 +14,7 @@ app.delete("/peoples/:id", (req, res) => {
 
   // Tentar encontrar pelo composto de 'name' e 'status'
   let index = peoples.findIndex((item) => {
-    const composedKey = `${item.name}|${item.status}`;
+    const composedKey = `${item.name}|${item.genreDescription}`;
     console.log(`Comparando ${composedKey} com ${id}`);
     return composedKey === id;
   });
