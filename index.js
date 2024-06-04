@@ -14,13 +14,11 @@ app.delete("/peoples/:id", (req, res) => {
 
   const idParts = id.split('|');
 
+  // Encontrar o índice do item
   let index = peoples.findIndex((item) => {
-    const composedKeys = [
-      item.name,
-      item.status,
-      item.genreDescription
-    ].filter(Boolean).join('|');
-    return composedKeys === id || item.id.toString() === id;
+    // Gerar a chave composta dinâmica com base nos valores de idParts
+    const composedKey = idParts.map((part, i) => item[Object.keys(item).find(key => item[key] === part)]).join('|');
+    return composedKey === id || item.id.toString() === id;
   });
 
   console.log("Índice encontrado:", index); // Log do índice encontrado
