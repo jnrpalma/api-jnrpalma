@@ -12,20 +12,11 @@ app.delete("/peoples/:id", (req, res) => {
   const id = decodeURIComponent(req.params.id);
   console.log("ID recebido para exclusão:", id); // Log do ID recebido
 
-  // Tentar encontrar pelo composto de 'name' e 'status'
+  // Tentar encontrar o índice do item com chave composta ou id único
   let index = peoples.findIndex((item) => {
     const composedKey = `${item.name}|${item.genreDescription}`;
-    console.log(`Comparando ${composedKey} com ${id}`);
-    return composedKey === id;
+    return composedKey === id || item.id.toString() === id;
   });
-
-  // Se não encontrar pelo composto, tentar encontrar pelo 'id'
-  if (index === -1) {
-    index = peoples.findIndex((item) => {
-      console.log(`Comparando ${item.id} com ${id}`);
-      return item.id.toString() === id;
-    });
-  }
 
   console.log("Índice encontrado:", index); // Log do índice encontrado
 
