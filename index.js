@@ -12,10 +12,8 @@ app.delete("/peoples/:id", (req, res) => {
   const id = decodeURIComponent(req.params.id);
   console.log("ID recebido para exclusão:", id);
 
-  const idParts = id.split('|');
-
   let index = peoples.findIndex((item) => {
-    const composedKey = idParts.map(part => item[part]).join('|');
+    const composedKey = [item.name, item.status, item.genre].join('|');
     console.log("Chave composta gerada:", composedKey); // Log da chave composta gerada
     return composedKey === id;
   });
