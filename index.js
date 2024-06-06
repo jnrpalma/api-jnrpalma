@@ -19,7 +19,17 @@ app.delete("/peoples/:id", (req, res) => {
   // Encontrar o índice do item com base nas partes da id
   let index = peoples.findIndex((item) => {
     const keys = Object.keys(item);
-    const composedKey = idParts.map((part, i) => keys.includes(part) ? item[part] : null).filter(Boolean).join('|');
+    // Gerar a chave composta atual do item
+    const composedKey = idParts.map((part, i) => {
+      // Verificar se a chave atual é uma chave do item
+      if (keys.includes(part)) {
+        return item[part];
+      }
+      // Se não for uma chave, retornar null
+      return null;
+    }).filter(Boolean).join('|');
+
+    // Comparar a chave composta gerada com a id recebida
     return composedKey === id || item.id.toString() === id;
   });
 
@@ -52,6 +62,7 @@ app.delete("/peoples/:id", (req, res) => {
     });
   }
 });
+
 
 // Função para filtrar e ordenar os dados
 function filterAndSort(data, query) {
