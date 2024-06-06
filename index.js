@@ -9,11 +9,11 @@ app.use(express.json());
 let peoples = require("./src/peoples/peoples.json");
 
 app.delete("/peoples/:id", (req, res) => {
-  // Decodificar a id recebida
+  
   const id = decodeURIComponent(req.params.id);
   console.log("ID recebido para exclusão:", id); // Log do ID recebido
 
-  // Dividir a id recebida em partes, considerando chaves compostas
+  
   const idParts = id.split('|');
 
   // Encontrar o índice do item com base nas partes da id
