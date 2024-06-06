@@ -18,8 +18,11 @@ app.delete("/peoples/:id", (req, res) => {
 
   // Encontrar o índice do item com base nas partes da id
   let index = peoples.findIndex((item) => {
-    const keys = Object.keys(item);
-    const composedKey = idParts.map((part, i) => keys.includes(part) ? item[part] : null).filter(Boolean).join('|');
+    const composedKey = [
+      item.name,
+      item.status,
+      item.genreDescription
+    ].filter(Boolean).join('|');
     return composedKey === id || item.id.toString() === id;
   });
 
