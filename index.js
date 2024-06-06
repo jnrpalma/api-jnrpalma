@@ -14,17 +14,17 @@ app.delete("/peoples/:id", (req, res) => {
   console.log("ID recebido para exclusão:", id); // Log do ID recebido
 
   // Dividir a id recebida em partes, considerando chaves compostas
-  const idParts = id.split('|').map(decodeURIComponent);
+  const idParts = id.split('|');
 
   // Encontrar o índice do item com base nas partes da id
   let index = peoples.findIndex((item) => {
     const composedKey = [
-      item.name,
-      item.status,
-      item.genreDescription
-    ].map(encodeURIComponent).join('|');
+      encodeURIComponent(item.name),
+      encodeURIComponent(item.status),
+      encodeURIComponent(item.genreDescription)
+    ].join('|');
     console.log(`Comparando ${composedKey} com ${id}`);
-    return composedKey === id;
+    return composedKey === id || item.id.toString() === id;
   });
 
   console.log("Índice encontrado:", index); // Log do índice encontrado
