@@ -9,43 +9,52 @@ app.use(express.json());
 let peoples = require("./src/peoples/peoples.json");
 
 app.delete("/peoples/:id", (req, res) => {
-  const id = decodeURIComponent(req.params.id);
-  console.log("ID recebido para exclusão:", id); // Log do ID recebido
+  try {
+    const id = decodeURIComponent(req.params.id);
+    console.log("ID recebido para exclusão:", id); // Log do ID recebido
 
-  // Encontrar o índice do item com base na chave composta
-  let index = peoples.findIndex((item) => {
-    const composedKey = `${item.name}|${item.status}|${item.genreDescription}`;
-    const decodedComposedKey = decodeURIComponent(composedKey);
-    console.log(`Comparando ${decodedComposedKey} com ${id}`);
-    return decodedComposedKey === id;
-  });
-
-  console.log("Índice encontrado:", index); // Log do índice encontrado
-
-  if (index > -1) {
-    const deletedItem = peoples.splice(index, 1);
-    res.json({
-      code: "SUCCESS",
-      message: "Item excluído com sucesso.",
-      deletedItem: deletedItem[0],
-      _messages: [{
-        code: "INFO",
-        type: "information",
-        message: "Item excluído com sucesso.",
-        detailedMessage: `O item com ID ${id} foi excluído.`,
-      }],
+    // Encontrar o índice do item com base na chave composta
+    let index = peoples.findIndex((item) => {
+      const composedKey = `${item.name}|${item.status}|${item.genreDescription}`;
+      const decodedComposedKey = decodeURIComponent(composedKey);
+      console.log(`Comparando ${decodedComposedKey} com ${id}`);
+      return decodedComposedKey === id;
     });
-  } else {
-    res.status(404).json({
-      code: "NOT_FOUND",
-      message: "Item não encontrado.",
-      detailedMessage: `O item com ID ${id} não foi encontrado.`,
-      _messages: [{
-        code: "ERROR",
-        type: "error",
+
+    console.log("Índice encontrado:", index); // Log do índice encontrado
+
+    if (index > -1) {
+      const deletedItem = peoples.splice(index, 1);
+      res.json({
+        code: "SUCCESS",
+        message: "Item excluído com sucesso.",
+        deletedItem: deletedItem[0],
+        _messages: [{
+          code: "INFO",
+          type: "information",
+          message: "Item excluído com sucesso.",
+          detailedMessage: `O item com ID ${id} foi excluído.`,
+        }],
+      });
+    } else {
+      res.status(404).json({
+        code: "NOT_FOUND",
         message: "Item não encontrado.",
         detailedMessage: `O item com ID ${id} não foi encontrado.`,
-      }],
+        _messages: [{
+          code: "ERROR",
+          type: "error",
+          message: "Item não encontrado.",
+          detailedMessage: `O item com ID ${id} não foi encontrado.`,
+        }],
+      });
+    }
+  } catch (error) {
+    console.error("Erro interno no servidor:", error);
+    res.status(500).json({
+      code: "INTERNAL_SERVER_ERROR",
+      message: "Ocorreu um erro interno no servidor.",
+      detailedMessage: error.message
     });
   }
 });
@@ -109,16 +118,6 @@ app.get("/peoples", (req, res) => {
     });
   }
 });
-
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({
-    code: "INTERNAL_SERVER_ERROR",
-    message: "Ocorreu um erro interno no servidor.",
-    detailedMessage: err.message
-  });
-});
-
 
 app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}!`);
