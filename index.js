@@ -9,31 +9,18 @@ app.use(express.json());
 let peoples = require("./src/peoples/peoples.json");
 
 app.delete("/peoples/:id", (req, res) => {
-  // Decodificar a id recebida
   const id = decodeURIComponent(req.params.id);
-  console.log("ID recebido para exclusão:", id); // Log do ID recebido
+  console.log("ID recebido para exclusão:", id);
 
-  // Dividir a id recebida em partes, considerando chaves compostas
   const idParts = id.split('|');
 
-  // Encontrar o índice do item com base nas partes da id
   let index = peoples.findIndex((item) => {
-    const keys = Object.keys(item);
-    // Gerar a chave composta atual do item
-    const composedKey = idParts.map((part, i) => {
-      // Verificar se a chave atual é uma chave do item
-      if (keys.includes(part)) {
-        return item[part];
-      }
-      // Se não for uma chave, retornar null
-      return null;
-    }).filter(Boolean).join('|');
-
-    // Comparar a chave composta gerada com a id recebida
-    return composedKey === id || item.id.toString() === id;
+    const composedKey = idParts.map(part => item[part]).join('|');
+    console.log("Chave composta gerada:", composedKey); // Log da chave composta gerada
+    return composedKey === id;
   });
 
-  console.log("Índice encontrado:", index); // Log do índice encontrado
+  console.log("Índice encontrado:", index);
 
   if (index > -1) {
     const deletedItem = peoples.splice(index, 1);
@@ -62,6 +49,7 @@ app.delete("/peoples/:id", (req, res) => {
     });
   }
 });
+
 
 
 // Função para filtrar e ordenar os dados
