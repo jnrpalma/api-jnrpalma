@@ -18,11 +18,8 @@ app.delete("/peoples/:id", (req, res) => {
 
   // Encontrar o índice do item com base nas partes da id
   let index = peoples.findIndex((item) => {
-    const composedKey = [
-      item.name,
-      item.status,
-      item.genreDescription
-    ].filter(Boolean).join('|');
+    // Construir a chave composta usando as propriedades corretas do objeto
+    const composedKey = [item.name, item.status, item.genreDescription].filter(Boolean).join('|');
     return composedKey === id || item.id.toString() === id;
   });
 
