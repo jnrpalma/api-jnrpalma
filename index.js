@@ -18,9 +18,13 @@ app.delete("/peoples/:id", (req, res) => {
 
   // Encontrar o índice do item com base nas partes da id
   let index = peoples.findIndex((item) => {
-    const itemKeys = [item.name, item.status, item.genreDescription];
-    const composedKey = itemKeys.filter(Boolean).join('|');
-    return composedKey === id;
+    const composedKey = [
+      decodeURIComponent(item.name),
+      item.status,
+      item.genreDescription
+    ].join('|');
+    console.log(`Comparando ${composedKey} com ${id}`);
+    return composedKey === id || item.id.toString() === id;
   });
 
   console.log("Índice encontrado:", index); // Log do índice encontrado
