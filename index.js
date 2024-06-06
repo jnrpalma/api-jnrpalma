@@ -15,9 +15,11 @@ app.delete("/peoples/:id", (req, res) => {
 
     // Encontrar o índice do item com base na chave composta
     let index = peoples.findIndex((item) => {
-      const composedKey = encodeURIComponent(`${item.name}|${item.status}|${item.genreDescription}`);
-      console.log(`Comparando ${composedKey} com ${encodeURIComponent(id)}`);
-      return composedKey === encodeURIComponent(id);
+      const nameDecoded = decodeURIComponent(item.name);
+      const genreDescriptionDecoded = decodeURIComponent(item.genreDescription);
+      const composedKey = `${nameDecoded}|${item.status}|${genreDescriptionDecoded}`;
+      console.log(`Comparando ${composedKey} com ${id}`);
+      return composedKey === id;
     });
 
     console.log("Índice encontrado:", index); // Log do índice encontrado
