@@ -9,15 +9,17 @@ app.use(express.json());
 let peoples = require("./src/peoples/peoples.json");
 
 app.delete("/peoples/:id", (req, res) => {
+  // Decodificar a id recebida
   const id = decodeURIComponent(req.params.id);
   console.log("ID recebido para exclusão:", id); // Log do ID recebido
 
+  // Dividir a id recebida em partes, considerando chaves compostas
   const idParts = id.split('|');
 
-  // Encontrar o índice do item
+  // Encontrar o índice do item com base nas partes da id
   let index = peoples.findIndex((item) => {
-    // Gerar a chave composta dinâmica com base nos valores de idParts
-    const composedKey = idParts.map((part, i) => item[Object.keys(item).find(key => item[key] === part)]).join('|');
+    const keys = Object.keys(item);
+    const composedKey = idParts.map((part, i) => keys.includes(part) ? item[part] : null).filter(Boolean).join('|');
     return composedKey === id || item.id.toString() === id;
   });
 
