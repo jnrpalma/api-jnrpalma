@@ -9,22 +9,22 @@ app.use(express.json());
 let peoples = require("./src/peoples/peoples.json");
 
 app.delete("/peoples/:id", (req, res) => {
-  
+  // Decodificar a id recebida
   const id = decodeURIComponent(req.params.id);
   console.log("ID recebido para exclusão:", id); // Log do ID recebido
 
-  
-  const idParts = id.split('|');
+  // Dividir a id recebida em partes, considerando chaves compostas
+  const idParts = id.split('|').map(decodeURIComponent);
 
   // Encontrar o índice do item com base nas partes da id
   let index = peoples.findIndex((item) => {
     const composedKey = [
-      decodeURIComponent(item.name),
+      item.name,
       item.status,
       item.genreDescription
-    ].join('|');
+    ].map(encodeURIComponent).join('|');
     console.log(`Comparando ${composedKey} com ${id}`);
-    return composedKey === id || item.id.toString() === id;
+    return composedKey === id;
   });
 
   console.log("Índice encontrado:", index); // Log do índice encontrado
