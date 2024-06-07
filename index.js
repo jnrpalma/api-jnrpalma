@@ -9,53 +9,50 @@ app.use(express.json());
 let peoples = require("./src/peoples/peoples.json");
 
 app.delete("/peoples/:id", (req, res) => {
-  try {
-    const id = decodeURIComponent(req.params.id);
-    console.log("ID recebido para exclusão:", id); // Log do ID recebido
+  
+  const id = decodeURIComponent(req.params.id);
+  console.log("ID recebido para exclusão:", id); // Log do ID recebido
 
-    // Encontrar o índice do item com base na chave composta
-    let index = peoples.findIndex((item) => {
-      const nameDecoded = decodeURIComponent(item.name);
-      const genreDescriptionDecoded = decodeURIComponent(item.genreDescription);
-      const composedKey = `${nameDecoded}|${item.status}|${genreDescriptionDecoded}`;
-      console.log(`Comparando ${composedKey} com ${id}`);
-      return composedKey === id;
-    });
+  
+  const idParts = id.split('|');
 
-    console.log("Índice encontrado:", index); // Log do índice encontrado
+  // Encontrar o índice do item com base nas partes da id
+  let index = peoples.findIndex((item) => {
+    const composedKey = [
+      decodeURIComponent(item.name),
+      item.status,
+      item.genreDescription
+    ].join('|');
+    console.log(`Comparando ${composedKey} com ${id}`);
+    return composedKey === id || item.id.toString() === id;
+  });
 
-    if (index > -1) {
-      const deletedItem = peoples.splice(index, 1);
-      res.json({
-        code: "SUCCESS",
+  console.log("Índice encontrado:", index); // Log do índice encontrado
+
+  if (index > -1) {
+    const deletedItem = peoples.splice(index, 1);
+    res.json({
+      code: "SUCCESS",
+      message: "Item excluído com sucesso.",
+      deletedItem: deletedItem[0],
+      _messages: [{
+        code: "INFO",
+        type: "information",
         message: "Item excluído com sucesso.",
-        deletedItem: deletedItem[0],
-        _messages: [{
-          code: "INFO",
-          type: "information",
-          message: "Item excluído com sucesso.",
-          detailedMessage: `O item com ID ${id} foi excluído.`,
-        }],
-      });
-    } else {
-      res.status(404).json({
-        code: "NOT_FOUND",
+        detailedMessage: `O item com ID ${id} foi excluído.`,
+      }],
+    });
+  } else {
+    res.status(404).json({
+      code: "NOT_FOUND",
+      message: "Item não encontrado.",
+      detailedMessage: `O item com ID ${id} não foi encontrado.`,
+      _messages: [{
+        code: "ERROR",
+        type: "error",
         message: "Item não encontrado.",
         detailedMessage: `O item com ID ${id} não foi encontrado.`,
-        _messages: [{
-          code: "ERROR",
-          type: "error",
-          message: "Item não encontrado.",
-          detailedMessage: `O item com ID ${id} não foi encontrado.`,
-        }],
-      });
-    }
-  } catch (error) {
-    console.error("Erro interno no servidor:", error);
-    res.status(500).json({
-      code: "INTERNAL_SERVER_ERROR",
-      message: "Ocorreu um erro interno no servidor.",
-      detailedMessage: error.message
+      }],
     });
   }
 });
