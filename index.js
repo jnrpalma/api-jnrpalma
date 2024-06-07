@@ -9,19 +9,23 @@ app.use(express.json());
 let peoples = require("./src/peoples/peoples.json");
 
 app.delete("/peoples/:id", (req, res) => {
-  // Decodificar a id recebida
   const id = decodeURIComponent(req.params.id);
   console.log("ID recebido para exclusão:", id); // Log do ID recebido
 
-  // Dividir a id recebida em partes, considerando chaves compostas
-  const idParts = id.split('|');
-
-  // Encontrar o índice do item com base nas partes da id
+  // Tentar encontrar pelo composto de 'name' e 'status'
   let index = peoples.findIndex((item) => {
-    const keys = Object.keys(item);
-    const composedKey = idParts.map((part, i) => keys.includes(part) ? item[part] : null).filter(Boolean).join('|');
-    return composedKey === id || item.id.toString() === id;
+    const composedKey = `${item.name}|${item.status}`;
+    console.log(`Comparando ${composedKey} com ${id}`);
+    return composedKey === id;
   });
+
+  // Se não encontrar pelo composto, tentar encontrar pelo 'id'
+  if (index === -1) {
+    index = peoples.findIndex((item) => {
+      console.log(`Comparando ${item.id} com ${id}`);
+      return item.id.toString() === id;
+    });
+  }
 
   console.log("Índice encontrado:", index); // Log do índice encontrado
 
@@ -59,6 +63,8 @@ function filterAndSort(data, query) {
     for (let key in query) {
       if (
         key !== "order" &&
+        key !== "page" &&
+        key !== "pageSize" &&
         (!item[key] ||
           !item[key]
             .toString()
@@ -87,19 +93,32 @@ function filterAndSort(data, query) {
   return result;
 }
 
+// Função para implementar a paginação
+function paginate(data, page, pageSize) {
+  const start = (page - 1) * pageSize;
+  const end = start + pageSize;
+  return data.slice(start, end);
+}
+
 app.get("/peoples", (req, res) => {
   try {
+    let { page, pageSize } = req.query;
+    page = page ? parseInt(page) : 1;
+    pageSize = pageSize ? parseInt(pageSize) : 10;
+
     let filteredAndSorted = filterAndSort(peoples, req.query);
+    const paginated = paginate(filteredAndSorted, page, pageSize);
 
     res.json({
-      items: filteredAndSorted,
+      hasNext: filteredAndSorted.length > page * pageSize,
+      items: paginated,
       _messages: [
         {
           code: "INFO",
           type: "information",
           message: "Dados recuperados com sucesso.",
           detailedMessage:
-            "A lista de pessoas foi filtrada e ordenada conforme solicitado.",
+            "A lista de pessoas foi filtrada, ordenada e paginada conforme solicitado.",
         },
       ],
     });
