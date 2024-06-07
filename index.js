@@ -12,20 +12,15 @@ app.delete("/peoples/:id", (req, res) => {
   const id = decodeURIComponent(req.params.id);
   console.log("ID recebido para exclusão:", id); // Log do ID recebido
 
-  // Tentar encontrar pelo composto de 'name' e 'status'
-  let index = peoples.findIndex((item) => {
-    const composedKey = `${item.name}|${item.status}`;
-    console.log(`Comparando ${composedKey} com ${id}`);
-    return composedKey === id;
-  });
+  // Dividir a chave composta em seus componentes
+  const [name, status, genreDescription] = id.split('|');
 
-  // Se não encontrar pelo composto, tentar encontrar pelo 'id'
-  if (index === -1) {
-    index = peoples.findIndex((item) => {
-      console.log(`Comparando ${item.id} com ${id}`);
-      return item.id.toString() === id;
-    });
-  }
+  // Tentar encontrar o item usando a chave composta
+  const index = peoples.findIndex(item => 
+    item.name === name && 
+    item.status === status && 
+    item.genreDescription === genreDescription
+  );
 
   console.log("Índice encontrado:", index); // Log do índice encontrado
 
@@ -56,6 +51,7 @@ app.delete("/peoples/:id", (req, res) => {
     });
   }
 });
+
 
 // Função para filtrar e ordenar os dados
 function filterAndSort(data, query) {
