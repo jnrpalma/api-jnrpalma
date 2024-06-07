@@ -1,7 +1,7 @@
 [
   {
     "id": 1012466991,
-    "name": "Jalin%20Sarhey",
+    "name": "Jalin Sarhey",
     "city": "Pirituba City",
     "status": "active",
     "approved": true,
@@ -15,7 +15,7 @@
   },
   {
     "id": 18036991,
-    "name": "Todi&ku r%s ghaddo",
+    "name": "Todiku ras ghaddo",
     "city": "Winterfell",
     "status": "active",
     "approved": true,
@@ -29,7 +29,7 @@
   },
   {
     "id": 145304513,
-    "name": "Cu10am Bid@n",
+    "name": "Culam Bidin",
     "city": "Oldtown",
     "status": "inactive",
     "approved": false,
