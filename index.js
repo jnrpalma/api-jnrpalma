@@ -10,19 +10,25 @@ let peoples = require("./src/peoples/peoples.json");
 
 app.delete("/peoples/:id", (req, res) => {
   const id = decodeURIComponent(req.params.id);
-  console.log("ID recebido para exclusão:", id); // Log do ID recebido
+  console.log("ID recebido para exclusão:", id);
 
-  // Dividir a chave composta em seus componentes
-  const [name, status, genreDescription] = id.split('|');
+  // Tentar encontrar o item usando o id direto
+  let index = peoples.findIndex(item => item.id.toString() === id);
+  console.log("Índice encontrado pelo ID:", index);
 
-  // Tentar encontrar o item usando a chave composta
-  const index = peoples.findIndex(item => 
-    item.name === name && 
-    item.status === status && 
-    item.genreDescription === genreDescription
-  );
-
-  console.log("Índice encontrado:", index); // Log do índice encontrado
+  // Se não encontrar pelo id direto, tentar encontrar pelo composto
+  if (index === -1) {
+    const keys = id.split('|');
+    
+    index = peoples.findIndex(item => {
+      let matches = true;
+      if (keys[0]) matches = matches && item.name === keys[0];
+      if (keys[1]) matches = matches && item.status === keys[1];
+      if (keys[2]) matches = matches && item.genreDescription === keys[2];
+      return matches;
+    });
+    console.log("Índice encontrado pela chave composta:", index);
+  }
 
   if (index > -1) {
     const deletedItem = peoples.splice(index, 1);
@@ -51,6 +57,7 @@ app.delete("/peoples/:id", (req, res) => {
     });
   }
 });
+
 
 
 // Função para filtrar e ordenar os dados
