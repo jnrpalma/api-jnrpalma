@@ -14,48 +14,6 @@
     "img": "https://images.dog.ceo/breeds/terrier-border/n02093754_175.jpg"
   },
   {
-    "id": 123456790,
-    "name": "Arthur Shelby",
-    "city": "Birmingham",
-    "status": "active",
-    "approved": true,
-    "genre": "male",
-    "genreDescription": "Masculino",
-    "salary": 130000,
-    "age": 38,
-    "email": "arthur.shelby@peakyblinders.com",
-    "birthdate": "1985-02-15",
-    "img": "https://images.dog.ceo/breeds/terrier-border/n02093754_175.jpg"
-  },
-  {
-    "id": 123456791,
-    "name": "John Shelby",
-    "city": "Birmingham",
-    "status": "active",
-    "approved": true,
-    "genre": "male",
-    "genreDescription": "Masculino",
-    "salary": 120000,
-    "age": 30,
-    "email": "john.shelby@peakyblinders.com",
-    "birthdate": "1993-06-10",
-    "img": "https://images.dog.ceo/breeds/terrier-border/n02093754_175.jpg"
-  },
-  {
-    "id": 123456792,
-    "name": "Ada Shelby",
-    "city": "Birmingham",
-    "status": "active",
-    "approved": true,
-    "genre": "female",
-    "genreDescription": "Feminino",
-    "salary": 100000,
-    "age": 28,
-    "email": "ada.shelby@peakyblinders.com",
-    "birthdate": "1995-09-25",
-    "img": "https://images.dog.ceo/breeds/terrier-border/n02093754_175.jpg"
-  },
-  {
     "id": 123456793,
     "name": "Polly Gray",
     "city": "Birmingham",
@@ -70,17 +28,17 @@
     "img": "https://images.dog.ceo/breeds/terrier-border/n02093754_175.jpg"
   },
   {
-    "id": 123456794,
-    "name": "Michael Gray",
+    "id": 123456790,
+    "name": "Arthur Shelby",
     "city": "Birmingham",
     "status": "active",
     "approved": true,
     "genre": "male",
     "genreDescription": "Masculino",
-    "salary": 110000,
-    "age": 27,
-    "email": "michael.gray@peakyblinders.com",
-    "birthdate": "1996-05-12",
+    "salary": 130000,
+    "age": 38,
+    "email": "arthur.shelby@peakyblinders.com",
+    "birthdate": "1985-02-15",
     "img": "https://images.dog.ceo/breeds/terrier-border/n02093754_175.jpg"
   },
   {
@@ -98,6 +56,20 @@
     "img": "https://images.dog.ceo/breeds/terrier-border/n02093754_175.jpg"
   },
   {
+    "id": 123456791,
+    "name": "John Shelby",
+    "city": "Birmingham",
+    "status": "active",
+    "approved": true,
+    "genre": "male",
+    "genreDescription": "Masculino",
+    "salary": 120000,
+    "age": 30,
+    "email": "john.shelby@peakyblinders.com",
+    "birthdate": "1993-06-10",
+    "img": "https://images.dog.ceo/breeds/terrier-border/n02093754_175.jpg"
+  },
+  {
     "id": 123456796,
     "name": "Grace Burgess",
     "city": "Birmingham",
@@ -109,6 +81,34 @@
     "age": 33,
     "email": "grace.burgess@peakyblinders.com",
     "birthdate": "1990-07-18",
+    "img": "https://images.dog.ceo/breeds/terrier-border/n02093754_175.jpg"
+  },
+  {
+    "id": 123456792,
+    "name": "Ada Shelby",
+    "city": "Birmingham",
+    "status": "active",
+    "approved": true,
+    "genre": "female",
+    "genreDescription": "Feminino",
+    "salary": 100000,
+    "age": 28,
+    "email": "ada.shelby@peakyblinders.com",
+    "birthdate": "1995-09-25",
+    "img": "https://images.dog.ceo/breeds/terrier-border/n02093754_175.jpg"
+  },
+  {
+    "id": 123456794,
+    "name": "Michael Gray",
+    "city": "Birmingham",
+    "status": "active",
+    "approved": true,
+    "genre": "male",
+    "genreDescription": "Masculino",
+    "salary": 110000,
+    "age": 27,
+    "email": "michael.gray@peakyblinders.com",
+    "birthdate": "1996-05-12",
     "img": "https://images.dog.ceo/breeds/terrier-border/n02093754_175.jpg"
   },
   {
