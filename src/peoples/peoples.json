@@ -1,5 +1,19 @@
 [
   {
+    "id": 946598769,
+    "name": "Joselito Matador",
+    "city": "São Paulo",
+    "status": "active",
+    "approved": true,
+    "genre": "male",
+    "genreDescription": "Masculino",
+    "salary": 150000,
+    "age": 35,
+    "email": "joselito.matador@tvglobinho.com",
+    "birthdate": "1988-04-10",
+    "img": "https://images.dog.ceo/breeds/terrier-border/n02093754_175.jpg"
+  },
+  {
     "id": 123456789,
     "name": "Thomas Shelby",
     "city": "Birmingham",
